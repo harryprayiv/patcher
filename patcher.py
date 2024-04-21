@@ -1,7 +1,6 @@
 import argparse
 
-def generate_patch(universe, dmx_start, fixture_start, quantity, width_mode, name_prefix):
-    width, mode = map(int, width_mode.split('x'))
+def generate_patch(universe, dmx_start, fixture_start, quantity, width, mode, name_prefix):
     patch_list = []
 
     current_universe = universe
@@ -22,7 +21,7 @@ def generate_patch(universe, dmx_start, fixture_start, quantity, width_mode, nam
         fixture_name = f"{name_prefix} {fixture_num:03d}"
 
         patch_list.append((
-            fixture_name, fixture_num, fixture_num, universe_dmx_start, universe_dmx_end, f'{width} "Mode {mode}"'
+            fixture_name, fixture_num, fixture_num, universe_dmx_start, universe_dmx_end, f'{width} "{mode}"'
         ))
 
         # Update the start for the next fixture
@@ -37,16 +36,17 @@ def generate_patch(universe, dmx_start, fixture_start, quantity, width_mode, nam
 
 def main():
     parser = argparse.ArgumentParser(description="Generate a patch list for lighting fixtures.")
-    parser.add_argument("universe", type=int, help="DMX Universe number")
-    parser.add_argument("dmx_start", type=int, help="DMX start address")
-    parser.add_argument("fixture_start", type=int, help="Fixture start number")
-    parser.add_argument("quantity", type=int, help="Number of fixtures to generate")
-    parser.add_argument("width_mode", type=str, help="DMX mode channel width in the format WIDTHxMODE")
-    parser.add_argument("name_prefix", type=str, help="Prefix for fixture names")
+    parser.add_argument("-u", "--universe", type=int, required=True, help="DMX Universe number")
+    parser.add_argument("-s", "--start_dmx", type=int, required=True, help="DMX start address")
+    parser.add_argument("-f", "--fixture_start", type=int, required=True, help="Fixture start number")
+    parser.add_argument("-q", "--quantity", type=int, required=True, help="Number of fixtures to generate")
+    parser.add_argument("-w", "--width", type=int, required=True, help="Width in terms of DMX channels per fixture")
+    parser.add_argument("-m", "--mode", type=str, required=True, help="Mode of the fixtures as a string")
+    parser.add_argument("-n", "--name_prefix", type=str, required=True, help="Prefix for fixture names")
 
     args = parser.parse_args()
 
-    generate_patch(args.universe, args.dmx_start, args.fixture_start, args.quantity, args.width_mode, args.name_prefix)
+    generate_patch(args.universe, args.start_dmx, args.fixture_start, args.quantity, args.width, args.mode, args.name_prefix)
 
 if __name__ == "__main__":
     main()
