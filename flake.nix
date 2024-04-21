@@ -14,12 +14,16 @@
     packages = {
       pythonEnv =
         nixpkgs.legacyPackages.${system}.python3.withPackages
-        (ps: with ps; []);
+        (ps: with ps; [
+          # requests
+        ]);
     };
     pkgs.python3Packages.buildPythonPackage = {
       name = "patcher";
       src = ./.;
-      propagatedBuildInputs = [(nixpkgs.legacyPackages.${system}.python3.withPackages (ps: with ps; []))];
+      propagatedBuildInputs = [(nixpkgs.legacyPackages.${system}.python3.withPackages (ps: with ps; [
+        # requests
+      ]))];
     };
     defaultPackage = packages.pythonEnv; # If you want to just build the environment
     devShell = packages.pythonEnv.env; # We need .env in order to use `nix develop`
