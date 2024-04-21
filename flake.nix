@@ -23,9 +23,10 @@
     };
     defaultPackage = packages.pythonEnv; # If you want to just build the environment
     devShell = packages.pythonEnv.env; # We need .env in order to use `nix develop`
-    # shellHook = ''
-    #   echo hi
-    #   python ./patcher.py
-    # '';
+    shellHook = ''
+      echo here's an example, betch.
+      python patcher.py --universe 1 --start_dmx 1 --fixture_start 2001 --quantity 16 --width 18 --mode "Mode 6" --name_prefix "Vortex"
+      python patcher.py --universe 1 --start_dmx 289 --fixture_start 2017 --quantity 16 --width 20 --mode "Profile 7" --name_prefix "S360"
+    '';
   }));
 }
