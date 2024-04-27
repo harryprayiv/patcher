@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <MA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.malighting.de/grandma2/xml/MA" xsi:schemaLocation="http://schemas.malighting.de/grandma2/xml/MA http://schemas.malighting.de/grandma2/xml/3.9.60/MA.xsd" major_vers="3" minor_vers="9" stream_vers="60">
     <Layer index="3" name="Rigged">
-        <Fixture index="0" name="Vortex XXX 2001" fixture_id="2001" channel_id="2001">
+        <Fixture index="0" name="Vortex 2001" fixture_id="2001" channel_id="2001">
             <FixtureType name="18 Mode 6">
                 <No>18</No>
             </FixtureType>
@@ -39,7 +39,7 @@
                 <Channel index="17"/>
             </SubFixture>
         </Fixture>
-        <Fixture index="1" name="Vortex XXX 2002" fixture_id="2002" channel_id="2002">
+        <Fixture index="1" name="Vortex 2002" fixture_id="2002" channel_id="2002">
             <FixtureType name="18 Mode 6">
                 <No>18</No>
             </FixtureType>
@@ -77,7 +77,7 @@
                 <Channel index="17"/>
             </SubFixture>
         </Fixture>
-        <Fixture index="2" name="Vortex XXX 2003" fixture_id="2003" channel_id="2003">
+        <Fixture index="2" name="Vortex 2003" fixture_id="2003" channel_id="2003">
             <FixtureType name="18 Mode 6">
                 <No>18</No>
             </FixtureType>
@@ -115,7 +115,7 @@
                 <Channel index="17"/>
             </SubFixture>
         </Fixture>
-        <Fixture index="3" name="Vortex XXX 2004" fixture_id="2004" channel_id="2004">
+        <Fixture index="3" name="Vortex 2004" fixture_id="2004" channel_id="2004">
             <FixtureType name="18 Mode 6">
                 <No>18</No>
             </FixtureType>
