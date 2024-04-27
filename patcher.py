@@ -33,8 +33,8 @@ def generate_patch(universe, dmx_start, fixture_start, quantity, width, mode, na
         {
             "Name": fixture_names[i],
             "Fixture": fixture_start + i,
-            "Universe.DMXchannelStart": f"{addr[0]}.{addr[1]:03d}",
-            "Universe.DMXchannelEnd": f"{addr[0]}.{addr[2]:03d}",
+            "Universe.DMXstart": f"{addr[0]}.{addr[1]:03d}",
+            "Universe.DMXend": f"{addr[0]}.{addr[2]:03d}",
             "Width": width,
             "Mode": mode
         }
