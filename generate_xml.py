@@ -74,7 +74,7 @@ def main():
     xml_string = pretty_print_xml(xml_root)
     
     # Optionally write to file or print to console
-    with open("Generated_Fixture_Layer.xml", "w") as file:
+    with open("Real_Fake_Fixture_Layer.xml", "w") as file:
         file.write(xml_string)
     print(xml_string)
 
